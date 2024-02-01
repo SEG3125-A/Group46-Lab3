@@ -4,7 +4,7 @@
 
 var products = [
 	{
-		name: "brocoli",
+		name: "Brocoli",
 		vegetables: true,
 		chicken: false,
 		fruit: false,
@@ -20,7 +20,7 @@ var products = [
 
 	},
 	{
-		name: "cupcakes",
+		name: "Cupcakes",
 		vegetables: false,
 		chicken: false,
 		dairy: false,
@@ -36,7 +36,7 @@ var products = [
 
 	},
 	{
-		name: "tomatoes",
+		name: "Tomatoes",
 		vegetables: true,
 		dairy: false,
 		chicken: false,
@@ -52,7 +52,7 @@ var products = [
 
 	},
 	{
-		name: "banana",
+		name: "Banana",
 		vegetables: false,
 		dairy: false,
 		fish: false,
@@ -68,7 +68,7 @@ var products = [
 
 	},
 	{
-		name: "bread",
+		name: "Bread",
 		vegetables: false,
 		fruit: false,
 		chicken: false,
@@ -84,7 +84,7 @@ var products = [
 
 	},
 	{
-		name: "cheddar cheese",
+		name: "Cheddar Cheese",
 		vegetables: false,
 		dairy: false,
 		dessert: false,
@@ -100,7 +100,7 @@ var products = [
 
 	},
 	{
-		name: "salmon",
+		name: "Salmon",
 		vegetables: false,
 		dairy: false,
 		fruit: false,
@@ -116,7 +116,7 @@ var products = [
 
 	},
 	{
-		name: "chicken wings",
+		name: "Chicken Wings",
 		vegetables: false,
 		fruit: false,
 		dairy: false,
@@ -132,7 +132,7 @@ var products = [
 
 	},
 	{
-		name: "strawberry milk",
+		name: "Strawberry Milk",
 		vegetables: false,
 		dairy: true,
 		fruit: false,
@@ -148,7 +148,7 @@ var products = [
 
 	},
 	{
-		name: "apples",
+		name: "Apples",
 		vegetables: false,
 		fruit: true,
 		dairy: false,
