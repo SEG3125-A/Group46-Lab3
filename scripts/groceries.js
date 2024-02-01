@@ -5,7 +5,13 @@
 var products = [
 	{
 		name: "brocoli",
-		vegetarian: true,
+		vegetables: true,
+		chicken: false,
+		fruit: false,
+		dairy: false,
+		fish: false,
+		cheese: false,
+		dessert: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
@@ -15,7 +21,13 @@ var products = [
 	},
 	{
 		name: "cupcakes",
-		vegetarian: false,
+		vegetables: false,
+		chicken: false,
+		dairy: false,
+		cheese: false,
+		fruit: false,
+		fish: false,
+		dessert: true,
 		glutenFree: false,
 		organic: false,
 		nonOrganic: true,
@@ -25,7 +37,13 @@ var products = [
 	},
 	{
 		name: "tomatoes",
-		vegetarian: true,
+		vegetables: true,
+		dairy: false,
+		chicken: false,
+		fish: false,
+		fruit: false,
+		dessert: false,
+		cheese: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
@@ -35,7 +53,13 @@ var products = [
 	},
 	{
 		name: "banana",
-		vegetarian: true,
+		vegetables: false,
+		dairy: false,
+		fish: false,
+		dessert: false,
+		cheese: false,
+		fruit: true,
+		chicken: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
@@ -45,7 +69,13 @@ var products = [
 	},
 	{
 		name: "bread",
-		vegetarian: true,
+		vegetables: false,
+		fruit: false,
+		chicken: false,
+		dessert: false,
+		dairy: false,
+		fish: false,
+		cheese: false,
 		glutenFree: false,
 		organic: true,
 		nonOrganic: false,
@@ -55,7 +85,13 @@ var products = [
 	},
 	{
 		name: "cheddar cheese",
-		vegetarian: true,
+		vegetables: false,
+		dairy: false,
+		dessert: false,
+		fruit: false,
+		fish: false,
+		cheese: true,
+		chicken: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
@@ -64,18 +100,30 @@ var products = [
 
 	},
 	{
-		name: "fish",
-		vegetarian: false,
+		name: "salmon",
+		vegetables: false,
+		dairy: false,
+		fruit: false,
+		cheese: false,
+		dessert: false,
+		fish: true,
+		chicken: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
 		price: 12.99,
-		url: "https://hips.hearstapps.com/hmg-prod/images/two-full-sea-bass-fish-on-ice-with-lemon-garnish-royalty-free-image-1638224995.jpg"
+		url: "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2F2023-04-baked-salmon-how-to%2Fbaked-salmon-step6-4792"
 
 	},
 	{
-		name: "chicken",
-		vegetarian: false,
+		name: "chicken wings",
+		vegetables: false,
+		fruit: false,
+		dairy: false,
+		fish: false,
+		chicken: true,
+		cheese: false,
+		dessert: false,
 		glutenFree: true,
 		organic: true,
 		nonOrganic: false,
@@ -85,7 +133,13 @@ var products = [
 	},
 	{
 		name: "strawberry milk",
-		vegetarian: true,
+		vegetables: false,
+		dairy: true,
+		fruit: false,
+		dessert: false,
+		fish: false,
+		cheese: false,
+		chicken: false,
 		glutenFree: true,
 		organic: false,
 		nonOrganic: true,
@@ -95,7 +149,13 @@ var products = [
 	},
 	{
 		name: "apples",
-		vegetarian: true,
+		vegetables: false,
+		fruit: true,
+		dairy: false,
+		chicken: false,
+		fish: false,
+		cheese: false,
+		dessert: false,
 		glutenFree: true,
 		organic: false,
 		nonOrganic: true,
@@ -117,16 +177,19 @@ function restrictListProducts(prods, restriction) {
 	let products = [];
 	for (let i = 0; i < prods.length; i += 1) {
 		let product = prods[i];
-		if ((restriction == "Vegetarian") && (product.vegetarian == true)) {
+		if ((restriction == "Vegetables") && (product.vegetables == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url});
-		} else if ((restriction == "GlutenFree") && (product.glutenFree == true)) {
+		} else if ((restriction == "Dairy") && (product.dairy == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url });
-		} else if ((restriction == "Organic") && (product.organic == true)) {
+		} else if ((restriction == "Cheese") && (product.cheese == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url });
-		} else if ((restriction == "Non-Organic") && (product.nonOrganic == true)) {
+		} else if ((restriction == "Fruit") && (product.fruit == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url });
-		} else if ((restriction == "Vegetarian & GlutenFree") && 
-		(product.glutenFree == true) && (product.vegetarian == true)) {
+		} else if ((restriction == "Chicken") && (product.chicken == true)) {
+			products.push({ name: product.name, price: product.price, url: product.url });
+		} else if ((restriction == "Fish") && (product.fish == true)) {
+			products.push({ name: product.name, price: product.price, url: product.url });
+		} else if ((restriction == "Dessert") && (product.dessert == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url });
 		} else if (restriction == "None") {
 			products.push({ name: product.name, price: product.price, url: product.url });
