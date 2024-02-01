@@ -17,23 +17,54 @@
     <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
   </div>
 
-  <!-- Tab content -->
-  <div id="Client" class="tabcontent">
-    <h3>Client Information</h3>
-    <p>Tell us a bit about you.</p>
-    Choose Your Preferred Food Category:
-    <select id="dietSelect" name="dietSelect" onchange="populateListProductChoices(this.id, 'displayProduct')">
-      <option value=""></option>
-      <option value="Vegetables">Vegetables</option>
-      <option value="Dairy">Dairy</option>
-      <option value="Fruit">Fruit</option>
-      <option value="Dessert">Dessert</option>
-      <option value="Chicken">Chicken</option>
-      <option value="Fish">Fish</option>
-      <option value="Cheese">Cheese</option>
-      <option value="None">Show All Categories</option>
-    </select>
-  </div>
+<!-- Tab content -->
+<div id="Client" class="tabcontent">
+  <h3>Client Information</h3>
+  <p>Tell us a bit about you.</p>
+
+  <fieldset>
+    <legend>Choose Your Preferred Food Category:</legend>
+    <input type="checkbox" id="vegetables" name="foodCategory" value="Vegetables">
+    <label for="vegetables">Vegetables</label>
+
+    <input type="checkbox" id="dairy" name="foodCategory" value="Dairy">
+    <label for="dairy">Dairy</label>
+
+    <input type="checkbox" id="fruit" name="foodCategory" value="Fruit">
+    <label for="fruit">Fruit</label>
+
+    <input type="checkbox" id="dessert" name="foodCategory" value="Dessert">
+    <label for="dessert">Dessert</label>
+
+    <input type="checkbox" id="chicken" name="foodCategory" value="Chicken">
+    <label for="chicken">Chicken</label>
+
+    <input type="checkbox" id="fish" name="foodCategory" value="Fish">
+    <label for="fish">Fish</label>
+
+    <input type="checkbox" id="cheese" name="foodCategory" value="Cheese">
+    <label for="cheese">Cheese</label>
+
+    <input type="checkbox" id="showAllCategories" name="foodCategory" value="Show All Categories">
+    <label for="showAllCategories">Show All Categories</label>
+  </fieldset>
+
+  <fieldset>
+    <legend>How Do You Like Your Food?:</legend>
+    <input type="checkbox" id="organic" name="foodPreference" value="Organic">
+    <label for="organic">Organic</label>
+
+    <input type="checkbox" id="nonOrganic" name="foodPreference" value="Non-Organic">
+    <label for="nonOrganic">Non-Organic</label>
+
+    <input type="checkbox" id="glutenFree" name="foodPreference" value="Gluten-Free">
+    <label for="glutenFree">Gluten-Free</label>
+
+    <input type="checkbox" id="noPreference" name="foodPreference" value="None">
+    <label for="noPreference">No Preference</label>
+  </fieldset>
+</div>
+
 
   <div id="Products" class="tabcontent">
     <h3>Your targeted products</h3>
