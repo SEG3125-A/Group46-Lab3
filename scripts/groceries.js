@@ -191,7 +191,7 @@ function restrictListProducts(prods, restriction) {
 			products.push({ name: product.name, price: product.price, url: product.url });
 		} else if ((restriction == "Dessert") && (product.dessert == true)) {
 			products.push({ name: product.name, price: product.price, url: product.url });
-		} else if (restriction == "None") {
+		} else if (restriction == "Show All Categories") {
 			products.push({ name: product.name, price: product.price, url: product.url });
 		}
 	}
