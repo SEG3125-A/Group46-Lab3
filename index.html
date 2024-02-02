@@ -17,46 +17,48 @@
     <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
   </div>
 
-<!-- Tab content -->
-<div id="Client" class="tabcontent">
-  <h3>Client Information</h3>
-  <p>Tell us a bit about you.</p>
+  <!-- Tab content -->
+  <div id="Client" class="tabcontent">
+    <h3>Client Information</h3>
+    <p>Tell us a bit about you.</p>
 
-  <fieldset>
-    <legend>Choose Your Preferred Food Category:</legend>
-    <input type="checkbox" id="vegetables" name="foodCategory" value="Vegetables" 
-    onchange="populateListProductChoices('vegetables', 'displayProduct')">
-    <label for="vegetables">Vegetables</label>
+    <fieldset>
+      <legend>Choose Your Preferred Food Category:</legend>
+      <input type="checkbox" id="vegetables" name="foodCategory" value="Vegetables"
+        onchange="populateListProductChoices('vegetables', 'displayProduct', 'rSelect')">
+      <label for="vegetables">Vegetables</label>
 
-    <input type="checkbox" id="dairy" name="foodCategory" value="Dairy"
-    onchange="populateListProductChoices('dairy', 'displayProduct')">
-    <label for="dairy">Dairy</label>
+      <input type="checkbox" id="dairy" name="foodCategory" value="Dairy"
+        onchange="populateListProductChoices('dairy', 'displayProduct', 'rSelect')">
+      <label for="dairy">Dairy</label>
 
-    <input type="checkbox" id="fruit" name="foodCategory" value="Fruit"
-    onchange="populateListProductChoices('fruit', 'displayProduct')">
-    <label for="fruit">Fruit</label>
+      <input type="checkbox" id="fruit" name="foodCategory" value="Fruit"
+        onchange="populateListProductChoices('fruit', 'displayProduct', 'rSelect')">
+      <label for="fruit">Fruit</label>
 
-    <input type="checkbox" id="dessert" name="foodCategory" value="Dessert"
-    onchange="populateListProductChoices('dessert', 'displayProduct')">
-    <label for="dessert">Dessert</label>
+      <input type="checkbox" id="dessert" name="foodCategory" value="Dessert"
+        onchange="populateListProductChoices('dessert', 'displayProduct', 'rSelect')">
+      <label for="dessert">Dessert</label>
 
-    <input type="checkbox" id="chicken" name="foodCategory" value="Chicken"
-    onchange="populateListProductChoices('chicken', 'displayProduct')">
-    <label for="chicken">Chicken</label>
+      <input type="checkbox" id="chicken" name="foodCategory" value="Chicken"
+        onchange="populateListProductChoices('chicken', 'displayProduct', 'rSelect')">
+      <label for="chicken">Chicken</label>
 
-    <input type="checkbox" id="fish" name="foodCategory" value="Fish"
-    onchange="populateListProductChoices('fish', 'displayProduct')">
-    <label for="fish">Fish</label>
+      <input type="checkbox" id="fish" name="foodCategory" value="Fish"
+        onchange="populateListProductChoices('fish', 'displayProduct', 'rSelect')">
+      <label for="fish">Fish</label>
 
-    <input type="checkbox" id="cheese" name="foodCategory" value="Cheese"
-    onchange="populateListProductChoices('cheese', 'displayProduct')">
-    <label for="cheese">Cheese</label>
+      <input type="checkbox" id="cheese" name="foodCategory" value="Cheese"
+        onchange="populateListProductChoices('cheese', 'displayProduct', 'rSelect')">
+      <label for="cheese">Cheese</label>
 
-    <input type="checkbox" id="showAllCategories" name="foodCategory" value="Show All Categories"
-    onchange="populateListProductChoices('showAllCategories', 'displayProduct')">
-    <label for="showAllCategories">Show All Categories</label>
-  </fieldset>
-</div>
+      <input type="checkbox" id="showAllCategories" name="foodCategory" value="Show All Categories"
+        onchange="populateListProductChoices('showAllCategories', 'displayProduct', 'rSelect')">
+      <label for="showAllCategories">Show All Categories</label>
+    </fieldset>
+    <button id="addCart" type="button" class="block" onclick="openInfo(event, 'Products')">
+      Show Products</button>
+  </div>
 
 
   <div id="Products" class="tabcontent">
@@ -64,17 +66,24 @@
     <p>We preselected products based on your chosen preferences. Feel free to make changes at anytime.</p>
     Choose items to buy:
     <div id="displayProduct"></div>
+    <button id="addCart" onclick="openInfo(event, 'Client')">Back</button>
     <button id="addCart" type="button" class="block" onclick="selectedItems()">
       Add selected items to cart.
     </button>
+    <button id="addCart" type="button" class="block" onclick="openInfo(event, 'Cart')">
+      Show Cart
   </div>
 
   <div id="Cart" class="tabcontent">
-    <h3>Cart</h3>
-    <p>Here is the content of your cart.</p>
-    <div id="displayCart"></div>
-  </div>
+    <div class="cartDesign">
+      <h3>Cart</h3>
+      <p>Here is the content of your cart.</p>
+      <div id="displayCart"></div>
+    </div>
+    <button id="addCart" type="button" class="block" onclick="openInfo(event, 'Products')">
+      Back to Products
 
+  </div>
   <script src="scripts/groceries.js"></script>
   <script src="scripts/main.js"></script>
 
