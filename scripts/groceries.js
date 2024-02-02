@@ -198,6 +198,25 @@ function restrictListProducts(prods, restriction) {
 	products.sort((a, b) => a.price - b.price);
 
 	return products;
+	
+//list of products matching dietary preferences, along with their prices.
+function dietaryPreference(diet, preference){
+    let products =[]
+    for(let i=0; i<diet.length; i+=1){
+        let product = diet[i];
+       if ((preference == "GlutenFree") && (product.glutenFree == true)) {
+			products.push({ name: product.name, price: product.price });
+		} else if ((preference == "Organic") && (product.organic == true)) {
+			products.push({ name: product.name, price: product.price });
+		} else if ((preference == "Non-Organic") && (product.nonOrganic == true)) {
+			products.push({ name: product.name, price: product.price })
+		}
+    }
+	products.sort((a, b) => a.price - b.price);
+
+	return products;
+
+}
 }
 
 // Calculate the total price of items, with received parameter being a list of products
