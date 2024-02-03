@@ -72,6 +72,27 @@
       Show Products</button>
   </div>
 
+  <div>
+    <fieldset>
+      <legend>What is your dietary preference?</legend>
+      <input type="checkbox" id="GlutenFree" name="dietaryPreference" value="GlutenFree"
+        onchange="populateDietaryChoice('GlutenFree', 'displayChoice')">
+        <label for="GlutenFree">GlutenFree</label>
+        <legend>What is your dietary preference?</legend>
+    <input type="checkbox" id="Organic" name="dietaryPreference" value="Organic"
+        onchange="populateDietaryChoice('Organic', 'displayChoice')">
+      <label for="Organic">Organic</label>
+      <legend>What is your dietary preference?</legend>
+    <input type="checkbox" id="NonOrganic" name="dietaryPreference" value="Non Organic"
+        onchange="populateDietaryChoice('NonOrganic', 'displayChoice')">
+      <label for="NonOrganic">Non Organic</label>
+      <legend>What is your dietary preference?</legend>
+    <input type="checkbox" id="displayAllChoices" name="dietaryPreference" value="Display All Choices"
+        onchange="populateDietaryChoice('displayAllChoices', 'displayChoice')">
+      <label for="displayAllChoices">Display All Choices</label>
+  </fieldset>
+</div>
+
 
   <div id="Products" class="tabcontent">
     <h3>Your targeted products</h3>
