@@ -76,10 +76,16 @@ function populateListProductChoices(slct2) {
     });
 }
 
+function individualPrice(products){
+	var namesProducts = restrictListProducts(products, category.value);
+	 for (i = 0; i < namesProducts.length; i++) {
+		  var productprice = namesProducts[i].price;
+}
+	
+	
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
 // We build a paragraph to contain the list of selected items, and the total price
-
 function selectedItems() {
 
 	var ele = document.getElementsByName("product");
@@ -94,7 +100,8 @@ function selectedItems() {
 	para.appendChild(document.createElement("br"));
 	for (i = 0; i < ele.length; i++) {
 		if (ele[i].checked) {
-			para.appendChild(document.createTextNode(ele[i].value));
+			var priceProduct = individualPrice(ele[i].value);
+			para.appendChild(document.createTextNode(ele[i].value) + "-$" + priceProduct);
 			para.appendChild(document.createElement("br"));
 			chosenProducts.push(ele[i].value);
 		}
