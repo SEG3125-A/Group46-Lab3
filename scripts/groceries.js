@@ -200,6 +200,25 @@ function restrictListProducts(prods, restriction) {
 	return products;
 }
 
+function restrictListProducts2(prods, dietaryRestriction) {
+	let products = [];
+	for (let i = 0; i < prods.length; i += 1) {
+		let product = prods[i];
+		if ((dietaryRestriction == "Organic") && (product.organic == true)) {
+			products.push({ name: product.name, price: product.price, url: product.url});
+		} else if ((dietaryRestriction == "Non-Organic") && (product.nonOrganic == true)) {
+			products.push({ name: product.name, price: product.price, url: product.url });
+		} else if ((dietaryRestriction == "Gluten-Free") && (product.glutenFree == true)) {
+			products.push({ name: product.name, price: product.price, url: product.url });
+		} else if ((dietaryRestriction == "Select All Options")) {
+			products.push({ name: product.name, price: product.price, url: product.url });
+		} 
+	}
+	products.sort((a, b) => a.price - b.price);
+
+	return products;
+}
+
 // Calculate the total price of items, with received parameter being a list of products
 function getTotalPrice(chosenProducts) {
 	totalPrice = 0;

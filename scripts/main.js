@@ -35,47 +35,51 @@ function productAlreadyInList(container, productName) {
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
 
-function populateListProductChoices(slct1, slct2) {
-	var s1 = document.getElementById(slct1);
-	var s2 = document.getElementById(slct2);
+function populateListProductChoices(slctProduct) {
+    var sProduct = document.getElementById(slctProduct);
 
-	s2.innerHTML = "";
+    sProduct.innerHTML = "";
 
-	var selectedCategories = document.querySelectorAll('input[name="foodCategory"]:checked');
+    var selectedCategories = document.querySelectorAll('input[name="foodCategory"]:checked');
+    var selectedDietary = document.querySelectorAll('input[name="foodDietary"]:checked');
 
-	selectedCategories.forEach(function (category) {
-        // Obtain a reduced list of products based on restrictions
-        var optionArray = restrictListProducts(products, category.value);
+    selectedCategories.forEach(function (category) {
+        selectedDietary.forEach(function (dietary) {
+            // Obtain a reduced list of products based on restrictions
+            var optionArray = restrictListProducts(products, category.value);
+            optionArray = restrictListProducts2(optionArray, dietary.value);
 
-        // Iterate through products in the current category
-        for (i = 0; i < optionArray.length; i++) {
-            var productName = optionArray[i].name;
-            var productprice = optionArray[i].price;
-            var productImage = optionArray[i].url;
+            // Iterate through products in the current category and dietary preference
+            for (var i = 0; i < optionArray.length; i++) {
+                var productName = optionArray[i].name;
+                var productPrice = optionArray[i].price;
+                var productImage = optionArray[i].url;
 
-            if (!productAlreadyInList(s2, productName)) {
-                var checkbox = document.createElement("input");
-                checkbox.type = "checkbox";
-                checkbox.name = "product";
-                checkbox.value = productName;
-                s2.appendChild(checkbox);
+                if (!productAlreadyInList(sProduct, productName)) {
+                    var checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.name = "product";
+                    checkbox.value = productName;
+                    sProduct.appendChild(checkbox);
 
-                var label = document.createElement('label');
-                label.htmlFor = productName;
-                label.appendChild(document.createTextNode(productName + "    " + "    " + "    " + "$" + productprice));
-                s2.appendChild(label);
+                    var label = document.createElement('label');
+                    label.htmlFor = productName;
+                    label.appendChild(document.createTextNode(productName + "    " + "    " + "    " + "$" + productPrice));
+                    sProduct.appendChild(label);
 
-                var img = document.createElement("img");
-                img.src = productImage;
-                img.alt = productName;
-                img.style.maxWidth = "100px";
-                s2.appendChild(img);
+                    var img = document.createElement("img");
+                    img.src = productImage;
+                    img.alt = productName;
+                    img.style.maxWidth = "100px";
+                    sProduct.appendChild(img);
 
-                s2.appendChild(document.createElement("br"));
+                    sProduct.appendChild(document.createElement("br"));
+                }
             }
-        }
+        });
     });
 }
+
 
 // This function is called when the "Add selected items to cart" button in clicked
 // The purpose is to build the HTML to be displayed (a Paragraph) 
